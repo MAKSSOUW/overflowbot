@@ -8,6 +8,21 @@ bot.on('ready', function() {
 
 bot.login(process.env.TOKEN);
 
+bot.on("messageDelete", message => {
+    var sender = message.author;
+    var msg = message.content;
+    
+    if(sender.id == user.bot) return;
+
+    /** Logs de message (modération) */
+    var date = new Date();
+    var dateResult = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + " à " + date.getHours() + ":" + date.getMinutes();   
+
+    bot.channels.get(logChannel).send([dateResult] + " " + sender.username + " - " + message.channel.name + " : " + msg);
+    
+    /** Fin de log */
+})
+
 bot.on('message', async message => {
     
     if(message.content === '!panelrole') {
