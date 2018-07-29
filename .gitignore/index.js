@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', function() {
     bot.user.setActivity("V 1.0");
+    bot.user.setPresence({ game: { name: 'https://discord.gg/AhtjZya', type: 0 } });
     console.log("Connecté pour RoleSelector"); 
 });
 
