@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-var logChannel = '463144900431577099';
 
 bot.on('ready', function() {
     bot.user.setActivity("V 1.0");
@@ -72,19 +71,4 @@ bot.on('message', async message => {
 
         
     }
-})
-
-bot.on("messageDelete", message => {
-    var sender = message.author;
-    var msg = message.content;
-    
-    if(sender.id == user.bot) return;
-
-    /** Logs de message (modération) */
-    var date = new Date();
-    var dateResult = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + " à " + date.getHours() + ":" + date.getMinutes();   
-
-    bot.channels.get(logChannel).send([dateResult] + " " + sender.username + " - " + message.channel.name + " : " + msg);
-    
-    /** Fin de log */
 })
