@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+var logChannel = '463144900431577099';
 
 bot.on('ready', function() {
     bot.user.setActivity("V 1.0");
