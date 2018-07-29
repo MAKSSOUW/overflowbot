@@ -3,9 +3,10 @@ const bot = new Discord.Client();
 
 bot.on('ready', function() {
     bot.user.setActivity("V 1.0");
-    bot.user.setPresence({ game: { name: 'https://discord.gg/AhtjZya', type: 0 } });
     console.log("Connecté pour RoleSelector"); 
-})
+});
+
+bot.login(process.env.TOKEN);
 
 bot.on('message', async message => {
     
@@ -40,7 +41,7 @@ bot.on('message', async message => {
             member.addRole("461667360378716161");
             console.log(`Added the role Fortnite to ${member.displayName}`);
             reaction.remove(user)
-    })
+    });
         collector2.on('collect', async reaction => { 
             const user = reaction.users.last(); 
             const guild = reaction.message.guild; 
@@ -48,7 +49,7 @@ bot.on('message', async message => {
             member.addRole("461756859263614977");
             console.log(`Added the role Overwatch to ${member.displayName}`);
             reaction.remove(user)
-    })
+    });
         collector3.on('collect', async reaction => { 
             const user = reaction.users.last(); 
             const guild = reaction.message.guild;
@@ -56,7 +57,7 @@ bot.on('message', async message => {
             member.addRole("461667873413267467"); 
             console.log(`Added the role Minecraft to ${member.displayName}`);
             reaction.remove(user)
-    })
+    });
         collector4.on('collect', async reaction => { 
             const user = reaction.users.last(); 
             const guild = reaction.message.guild; 
@@ -66,8 +67,8 @@ bot.on('message', async message => {
             member.removeRole("461667873413267467");
             console.log(`Remove all roles to ${member.displayName}`);
             reaction.remove(user)
-    })
+    });
 
         
     }
-bot.login(process.env.TOKEN);
+})
