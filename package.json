@@ -6,10 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "npm": "5.7.1"
-    "yarn": "1.4.0"
-  },
   "author": "Scandium90",
   "license": "ISC",
   "dependencies": {
