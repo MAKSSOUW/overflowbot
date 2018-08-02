@@ -10,6 +10,7 @@ bot.login(process.env.TOKEN);
 
 bot.on('message', async message => {
     
+if(message.author.id === '246598098900615169'){
     if(message.content === '!panelrole') {
         if(message.guild.channels.id === '473067588314988544' || message.guild.channels.id === '461666810656456716') return message.delete();
         var embed = new Discord.RichEmbed()
@@ -67,8 +68,9 @@ bot.on('message', async message => {
             member.removeRole("461667873413267467");
             console.log(`Remove all roles to ${member.displayName}`);
             reaction.remove(user)
-    });
-
-        
+    });   
     }
+}else{
+    return message.delete();
+}
 })
