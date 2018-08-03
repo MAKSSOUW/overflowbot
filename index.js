@@ -10,7 +10,7 @@ bot.login(process.env.TOKEN);
 
 bot.on('message', async message => {
     
-if(message.author.id === '246598098900615169'){
+
     if(message.content === '!panelrole') {
         if(message.guild.channels.id === '473067588314988544' || message.guild.channels.id === '461666810656456716') return message.delete();
         var embed = new Discord.RichEmbed()
@@ -70,7 +70,4 @@ if(message.author.id === '246598098900615169'){
             reaction.remove(user)
     });   
     }
-}else{
-    return message.delete();
-}
 })
